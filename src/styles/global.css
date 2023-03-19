@@ -1,0 +1,70 @@
+/* 
+ * Global styles for my personal website. Based off Tailwind Preflight and
+ * https://andy-bell.co.uk/a-modern-css-reset/
+ */
+
+/* Use border-box for ALL THE THINGS! */
+html {
+    box-sizing: border-box;
+}
+*, *::before, *:after {
+    box-sizing: inherit;
+}
+
+/* Enable smooth scrolling without breaking CTRL+F */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Remove default margin */
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+/* Make replaced elements block-level */
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+/* Make images and videos responsive */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Let people choose if they prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+}
+
+body {
+    padding: 2em;
+    font-size: 1.5rem;
+}
