@@ -1,5 +1,8 @@
 ---
+import Navigation from '../components/Navigation.astro';
 import '../styles/global.css';
+
+const { frontmatter } = Astro.props;
 ---
 
 <html lang="en">
@@ -10,9 +13,8 @@ import '../styles/global.css';
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     </head>
     <body>
-        <a href="/">Home</a>
-        <a href="/blog">Blog</a>
-        <a href="/about">About</a>
+        <Navigation />
+        <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
         <slot />
     </body>
 </html>
