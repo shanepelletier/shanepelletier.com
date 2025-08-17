@@ -1,20 +1,10 @@
 ---
-import Navigation from '../components/Navigation.astro';
-import '../styles/global.css';
+import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-		<meta name="author" content="Shane Pelletier" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-    </head>
-    <body>
-        <Navigation />
-        <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
-        <slot />
-    </body>
-</html>
+<BaseLayout pageTitle={frontmatter.title}>
+    <p>{frontmatter.pubDate.toLocaleDateString()}</p>
+    <slot />
+</BaseLayout>
