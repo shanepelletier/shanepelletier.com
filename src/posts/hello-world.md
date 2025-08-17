@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: "Hello, world!"
 pubDate: 2023-03-18
 description: "The beginning."

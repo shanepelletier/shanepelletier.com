@@ -1,23 +1,15 @@
 ---
-import Navigation from '../../components/Navigation.astro';
+import { getCollection } from 'astro:content';
 import '../../styles/global.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogPost from '../../components/BlogPost.astro';
+
+const allPosts = await getCollection("blog");
+const pageTitle = "A Curious Creature's Blog";
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="author" content="Shane Pelletier" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="generator" content={Astro.generator} />
-        <title>A Curious Creature's Blog</title>
-    </head>
-    <body>
-        <Navigation />
-        <h1>Blog</h1>
-        <ul>
-            <li><a href="/blog/hello-world/">Hello, world!</a></li>
-            <li><a href="/blog/using-yubikey-from-command-line/">Using a YubiKey from the command line</a></li>
-        </ul>
-    </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <ul>
+        {allPosts.map((post: any) => <BlogPost url={`/blog/${post.id}/`} title={post.data.title} />)}
+    </ul>
+</BaseLayout>

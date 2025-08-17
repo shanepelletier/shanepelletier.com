@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/PostLayout.astro
 title: "Using a YubiKey from the command line"
 pubDate: 2025-08-10
 description: "A simple bash script to to generate OTPs from the command line using a YubiKey."
