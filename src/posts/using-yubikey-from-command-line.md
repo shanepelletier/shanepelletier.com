@@ -22,6 +22,6 @@ fi
 printf %s "$OTP" | tee >(xclip -sel clipboard)
 ```
 
-This uses two CLI tools that need installation: [`ykman`](https://developers.yubico.com/yubikey-manager/) and [`fzf`](https://github.com/junegunn/fzf). Once those two tools are installed, there is a little bit of work needed to setup the YubiKey. This can be done using the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/) application (which is what I did before I realized how to do it with the CLI) or use `ykman`.
+This uses two CLI tools that need installation: [`ykman`](https://developers.yubico.com/yubikey-manager/) and [`fzf`](https://github.com/junegunn/fzf). Once those two tools are installed, there is a little bit of work needed to setup the YubiKey. This can be done using the [Yubico Authenticator](https://www.yubico.com/products/yubico-authenticator/) application (which is what I did before I realized how to do it with the CLI) or using `ykman`.
 
 With this setup, I'm able to type `otp` into my terminal, press enter, see a list of accounts that I can search with using the fuzzy searching provided by `fzf`, select the account I wish to generate a TOTP for, and press enter. The code is printed in the terminal and automatically copied to the clipboard for easy pasting into whichever program needed it.
